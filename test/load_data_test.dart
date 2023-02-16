@@ -14,7 +14,7 @@ void main() async {
     );
 
     blocTest(
-      'emits [1] when CounterIncrementPressed is added',
+      'emits [isA<UserLoadInProgress>()] when UserRequested is added',
       build: () => UserBloc(UserServices()),
       act: (bloc) => bloc.add(UserRequested()),
       expect: () => [isA<UserLoadInProgress>()],
