@@ -28,4 +28,12 @@ class User {
     data['imageUrl'] = imageUrl;
     return data;
   }
+
+  @override
+  bool operator ==(Object other) {
+    return other is User && hashCode == other.hashCode;
+  }
+
+  @override
+  int get hashCode => int.tryParse(id ?? '0') ?? 0;
 }

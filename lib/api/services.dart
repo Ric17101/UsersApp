@@ -14,6 +14,6 @@ class UserServices implements UsersRepo {
   Future<List<User>> getUserList() async {
     Response response = await _dio.get(_baseUrl);
     List<User> users = userFromJson(response.data);
-    return users;
+    return users.toSet().toList();
   }
 }
