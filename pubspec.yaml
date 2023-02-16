@@ -12,9 +12,9 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+  dio: ^4.0.6
   flutter_bloc: ^8.1.2
   equatable: ^2.0.5
-  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:

@@ -1,11 +1,4 @@
-import 'package:usersapp/bloc/events.dart';
 import 'package:usersapp/models/user.dart';
-
-class UserRequested extends UserEvent {
-  UserRequested(this.user);
-
-  final User user;
-}
 
 abstract class UserState {}
 
