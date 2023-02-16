@@ -5,6 +5,8 @@ import 'package:usersapp/bloc/bloc.dart';
 import 'package:usersapp/bloc/events.dart';
 import 'package:usersapp/bloc/state.dart';
 import 'package:usersapp/models/user.dart';
+import 'package:usersapp/screens/user_details_screen.dart';
+import 'package:usersapp/screens/widget/user_item.dart';
 
 class UsersScreen extends StatefulWidget {
   const UsersScreen({super.key});
@@ -67,13 +69,17 @@ class UsersScreenState extends State<UsersScreen> {
         itemCount: users.length,
         itemBuilder: (_, index) {
           User user = users[index];
-          return ListTile(
-            title: Text(user.name ?? ''),
-            subtitle: Text(
-              user.id ?? '',
-              overflow: TextOverflow.visible,
-              softWrap: true,
-            ),
+
+          return UserItem(
+            title: user.name ?? '',
+            details: user.id ?? '',
+            thumbnail: user.imageUrl ?? '',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (BuildContext context) => UserDetails(user: user)),
+              );
+            },
           );
         },
       ),
